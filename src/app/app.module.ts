@@ -11,7 +11,9 @@ import { TemplateComponent } from './components/template/template.component';
     TemplateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
