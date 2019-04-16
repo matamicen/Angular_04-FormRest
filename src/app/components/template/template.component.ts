@@ -12,4 +12,10 @@ export class TemplateComponent implements OnInit {
   ngOnInit() {
   }
 
+  guardar() {
+      console.log("guardo los cambios");
+      
+
+  }
+
 }
