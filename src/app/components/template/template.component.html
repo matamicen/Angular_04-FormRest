@@ -1,6 +1,6 @@
 <h4>Formularios <small>template</small></h4>
 <hr>
-<form (ngSubmit)="guardar(forma)" #forma="ngForm"  >
+<form (ngSubmit)="guardar(forma)" #forma="ngForm"  novalidate="">
 
   <div>
 
@@ -36,13 +36,15 @@
   <div class="form-group row">
     <label class="col-2 col-form-label">Correo</label>
     <div class="col-md-8">
-
+      <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" -->
       <input class="form-control"
              type="email"
              placeholder="Correo electrónico"
              name="email"
              [(ngModel)]="usuario.email"
-             required>
+             required
+             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+             >
     </div>
   </div>
 
