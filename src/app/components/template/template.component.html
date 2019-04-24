@@ -11,17 +11,17 @@
         <input class="form-control"
                type="text"
                placeholder="Nombre"
-               name="nombre"
+               name="name"
                minlength="5"
-               [(ngModel)]="usuario.nombre"
+               [(ngModel)]="usuario.name"
                required
-               #nombre="ngModel">
+               #name="ngModel">
 
-        <div *ngIf="nombre.errors?.required">
+        <div *ngIf="name.errors?.required">
         nombre es requerido
         </div>
-        <div *ngIf="nombre.errors?.minlength">
-        al menos {{nombre.errors.minlength.requiredLength}} caracteres
+        <div *ngIf="name.errors?.minlength">
+        al menos {{name.errors.minlength.requiredLength}} caracteres
          </div>
       </div>
       
@@ -34,12 +34,12 @@
         <input class="form-control"
                type="text"
                placeholder="telefono"
-               name="telefono"
-               [(ngModel)]="usuario.telefono"
+               name="phone"
+               [(ngModel)]="usuario.phone"
                required
-               #telefono="ngModel">
+               #phone="ngModel">
 
-             <div *ngIf="telefono.errors?.required">
+             <div *ngIf="phone.errors?.required">
               telefono es requerido
               </div>
                 
@@ -75,7 +75,7 @@
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
-      <button type="submit" class="btn btn-outline-primary">
+      <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary">
         Guardar
       </button>
     </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { FormService } from '../../services/form.service';
 
 @Component({
   selector: 'app-template',
@@ -14,12 +14,14 @@ import { NgForm } from '@angular/forms';
 export class TemplateComponent implements OnInit {
 
   usuario:Object = {
-    nombre : null,
-    telefono : null,
+    name : null,
+    phone : null,
     email : null
 
   }
-  constructor() { }
+
+  
+  constructor(private _formservice:FormService) { }
 
   ngOnInit() {
   }
@@ -29,6 +31,14 @@ export class TemplateComponent implements OnInit {
       console.log("NgForm forma: ", forma);
       console.log("forma value: ", forma.value);
       console.log("usuario: ", this.usuario);
+
+     this._formservice.altaUsuario(this.usuario)
+        .subscribe(data => console.log(data),
+        error => {
+          console.log("fallo el call de la API");
+          
+          console.log(error)
+        });
       
       
 
