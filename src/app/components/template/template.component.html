@@ -28,19 +28,19 @@
     </div>
 
     <div class="form-group row">
-      <label class="col-2 col-form-label">Apellido</label>
+      <label class="col-2 col-form-label">telefono</label>
       <div class="col-8">
 
         <input class="form-control"
                type="text"
-               placeholder="Apellido"
-               name="apellido"
-               [(ngModel)]="usuario.apellido"
+               placeholder="telefono"
+               name="telefono"
+               [(ngModel)]="usuario.telefono"
                required
-               #apellido="ngModel">
+               #telefono="ngModel">
 
-             <div *ngIf="apellido.errors?.required">
-              Apellido es requerido
+             <div *ngIf="telefono.errors?.required">
+              telefono es requerido
               </div>
                 
       </div>

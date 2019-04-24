@@ -15,7 +15,7 @@ export class TemplateComponent implements OnInit {
 
   usuario:Object = {
     nombre : null,
-    apellido : null,
+    telefono : null,
     email : null
 
   }
