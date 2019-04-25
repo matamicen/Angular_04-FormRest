@@ -81,5 +81,38 @@
     </div>
   </div>
 
+  
+
 </form>
+
+
+  <div>
+    <button type="button" (click)="getAllUsers()" class="btn btn-outline-primary" >Traer todos los usuarios</button>
+    
+  </div>
+  
+    <div *ngIf="dataUsers.length > 0">
+      <table class="table table-striped">
+          <thead>
+              <tr>
+         
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+       <tbody *ngFor="let item of dataUsers" class="table table-striped"> 
+          <tr>
+            <th> {{item.name}}</th>
+            <th>  {{item.phone}}</th>
+            <th>  {{item.email}}</th>
+
+          </tr> 
+
+
+        </tbody>
+      </table>
+
+    </div>
+      
 

@@ -8,6 +8,7 @@ import 'rxjs/Rx';
 export class FormService {
 
   altaUserURL:string = "http://localhost:8080/contacts";
+  getAllUsersURL:string = "http://localhost:8080/contacts";
 
   constructor(private http:Http) { }
 
@@ -21,6 +22,19 @@ export class FormService {
           console.log(res.json());
           return res.json();
         });
+   }
+
+   getAllUsers(){
+   
+   // let body = JSON.stringify(user);
+    let header = new Headers({'Content-Type':'application/json'});
+
+    return this.http.get(this.getAllUsersURL, {headers: header})
+        .map(res =>{
+          console.log(res.json());
+          return res.json();
+        });
+
    }
 
 

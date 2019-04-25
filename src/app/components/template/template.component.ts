@@ -20,6 +20,8 @@ export class TemplateComponent implements OnInit {
 
   }
 
+  dataApi:any = {};
+  dataUsers:any [] = [];
   
   constructor(private _formservice:FormService) { }
 
@@ -33,15 +35,34 @@ export class TemplateComponent implements OnInit {
       console.log("usuario: ", this.usuario);
 
      this._formservice.altaUsuario(this.usuario)
-        .subscribe(data => console.log(data),
+        .subscribe(data => {
+          console.log(data)
+          this.dataApi = data;
+          this.getAllUsers();
+        },
         error => {
           console.log("fallo el call de la API");
           
           console.log(error)
         });
-      
-      
 
   }
+
+  getAllUsers(){
+    console.log("llamo getAllUsers");
+    this._formservice.getAllUsers()
+    .subscribe(data => {
+      console.log(data);
+      this.dataUsers = data.results;
+
+
+    }, error => {console.log("fallo el call de la API getAllUsers")
+                console.log(error)
+      });
+  }
+
+
+
+
 
 }
